@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Table</title>
+    <link rel="stylesheet" href="{% static 'conf.css'%}">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for docusers in data %}
+            <tr>
+                <td>{{docusers.name}}</td> 
+                <td>{{docusers.email}}</td>
+                <td>{{docusers.mobile}}</td>
+                <td>{{docusers.date}}</td>
+                <td>{{docusers.time}}</td>
+                <td>{{docusers.reason}}</td>
+            </tr>
+            {% endfor %}
+            <!-- Additional rows can be added here -->
+        </tbody>
+    </table>
+</body>
+</html>
